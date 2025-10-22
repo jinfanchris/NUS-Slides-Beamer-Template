@@ -1,0 +1,84 @@
+# -----------------------------------------------------------------------------
+# LaTeX Beamer Project .gitignore
+# -----------------------------------------------------------------------------
+# Purpose: Ignore intermediate files generated during compilation.
+# Compatible with: pdflatex, xelatex, lualatex, latexmk, and TeXShop.
+# -----------------------------------------------------------------------------
+
+# Core LaTeX intermediate files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.nav
+*.snm
+*.vrb
+
+# Bibliography / Index / Glossary
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.idx
+*.ilg
+*.ind
+*.ist
+*.acr
+*.acn
+*.alg
+*.glg
+*.glo
+*.gls
+
+# Beamer & TikZ externalization outputs
+*.nav
+*.snm
+*.vrb
+*.tdo
+*.tikz
+*-figure*.pdf
+*-figure*.eps
+
+# Generated directories (by latexmk or TeX editors)
+latex.out/
+build/
+out/
+tmp/
+_cache/
+
+# Backup / Autosave files
+*~
+*.bak
+*.backup
+*.tmp
+*.swp
+*.swo
+*.sav
+*.orig
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+Desktop.ini
+
+# VS Code / LaTeX Workshop
+.vscode/
+*.code-workspace
+*.pdfsync
+
+# Logs or local configurations
+*.log.*
+*.xdv
+*.pdf_tex
+
+# -----------------------------------------------------------------------------
+# End of .gitignore
+# -----------------------------------------------------------------------------
