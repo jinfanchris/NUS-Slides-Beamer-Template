@@ -14,66 +14,35 @@
 \usepackage{datetime}
 \newcommand{\footerdate}{\tiny \the\year.\the\month.\the\day}
 
-\setbeamertemplate{footline} {%
-
-  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
-  \end{beamercolorbox}
-
-  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
-    leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
-    \leavevmode{\usebeamerfont{author in head/foot}\insertshortauthor}%
-    \hfill%
-    {\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}\insertshortinstitute}%
-
-  \end{beamercolorbox}%
-
-  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
-    leftskip=.3cm,rightskip=.3cm ]{title in head/foot}%
-    {\usebeamerfont{title in head/foot}\insertshorttitle}%
-    \hfill
-    {\usebeamerfont{title in head/foot}\footerdate }% 插入时间
-    \hfill
-    {\usebeamerfont{frame number}\usebeamercolor[fg]{frame number}\insertframenumber~\frameofframes~\inserttotalframenumber}
-
-  \end{beamercolorbox}%
-
-  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
-  \end{beamercolorbox}
-}
-
 
 \makeatother
+\useoutertheme{default}
 
-\useinnertheme{circles}
+% \useinnertheme{circles}
 
 %\useoutertheme{default}
 %\useinnertheme[shadow=true]{rounded}
 
-\definecolor{nus-orange}{RGB}{239,124,0} 
+\definecolor{nus-orange}{RGB}{248,110,35} 
 \definecolor{nus-white}{RGB}{255,255,255}
-\definecolor{nus-blue}{RGB}{0,61,124}
+\definecolor{nus-blue}{RGB}{32,49,150}
 \definecolor{nus-black}{RGB}{0,0,0}
 
-\setbeamercolor{footline}{bg=nus-blue}
-\setbeamercolor{frametitle}{bg=nus-blue,fg=white}
-\setbeamercolor{title}{bg=nus-blue}
-\setbeamerfont{frametitle}{size=\large}
+\setbeamercolor{frametitle}{fg=nus-orange,bg=nus-white}
+\setbeamerfont{frametitle}{size=\small,series=\bfseries}
+\setbeamercolor{subframetitle}{bg=nus-white!75,fg=nus-orange}
+\setbeamerfont{subframetitle}{size=\small}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{bibliography item}[text]
 \setbeamertemplate{caption}[numbered]
 
-\setbeamercolor{palette primary}{use=structure,fg=white,bg=structure.fg}
-\setbeamercolor{palette secondary}{use=structure,fg=white,bg=structure.fg!75!black}
-\setbeamercolor{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}
-\setbeamercolor{palette quaternary}{fg=white,bg=structure.fg!50!black}
-%\setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
-\setbeamercolor{titlelike}{parent=palette primary}
-
 %% try
-\setbeamercolor{block title}{bg=nus-blue,fg=white}
-\setbeamercolor*{block title example}{use={normal text,example text},bg=white,fg=nus-blue}
+% \setbeamercolor{block title}{bg=nus-blue,fg=white}
+% \setbeamercolor{normal text}{fg=nus-white, bg=nus-orange}
+% \setbeamercolor*{block title example}{use={normal text,example text},bg=white,fg=nus-blue}
 \setbeamercolor{fine separation line}{}
 \setbeamercolor{item projected}{fg=white}
+\setbeamercolor{itemize/enumerate body}{fg=nus-blue}
 \setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
 \setbeamercolor{palette sidebar quaternary}{use=structure,fg=structure.fg}
 \setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg}
@@ -84,19 +53,136 @@
 \setbeamercolor{separation line}{}
 \setbeamercolor{sidebar}{bg=nus-orange}
 \setbeamercolor{sidebar}{parent=palette primary}
-\setbeamercolor{structure}{fg=nus-orange}
+\setbeamercolor{structure}{fg=nus-blue}
 \setbeamercolor{subsection in sidebar}{fg=brown}
 \setbeamercolor{subsection in sidebar shaded}{fg=grey}
+\setbeamercolor{institute}{fg=nus-orange}
+
+% 标题页背景和文字
+\setbeamercolor{normal text}{fg=nus-orange, bg=nus-white}
+\setbeamercolor{title}{fg=nus-orange,bg=nus-white}
+\setbeamercolor{subtitle}{fg=nus-orange}
+\setbeamercolor{author}{fg=nus-orange}
+\setbeamercolor{date}{fg=nus-orange}
+\setbeamertemplate{subsection in head/foot}{}
+
+% \setbeamercolor{headline}{bg=nus-blue, fg=nus-white}
+% \setbeamercolor{footline}{bg=nus-blue, fg=nus-white}
+% \setbeamercolor{fine separation line}{bg=nus-orange}
+% \setbeamercolor{background canvas}{bg=nus-orange}%
+
 \AtBeginSection[]{
-  \begin{frame}
-    \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
-  \end{frame}
+    \begin{frame}
+        \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+    \end{frame}
 }
 \AtBeginSubsection[]{
-  % \begin{frame}
-  % 	\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
-  % \end{frame}
+    % \begin{frame}
+    % 	\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+    % \end{frame}
 }
+
+
+\setbeamertemplate{footline} {%
+
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    \end{beamercolorbox}
+
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+        leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+        \leavevmode{\usebeamerfont{author in head/foot}\insertshortauthor}%
+        \hfill%
+        {\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}\insertshortinstitute}%
+
+    \end{beamercolorbox}%
+
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+        leftskip=.3cm,rightskip=.3cm ]{title in head/foot}%
+        {\usebeamerfont{title in head/foot}\insertshorttitle}%
+        \hfill
+        {\usebeamerfont{title in head/foot}\footerdate }% 插入时间
+        \hfill
+        {\usebeamerfont{frame number}\usebeamercolor[fg]{frame number}\insertframenumber~\frameofframes~\inserttotalframenumber}
+
+    \end{beamercolorbox}%
+
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+}
+
+\setbeamercolor{titlegraphic}{bg=nus-blue, fg=nus-white}
+
+% Uncomment this, if you want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+    \begin{frame}<beamer>{Outline}
+        \tableofcontents[currentsection,currentsubsection]
+    \end{frame}
+}
+
+% --- 保留 default 主题，只改 bar 的颜色 ---
+% 顶部 bar （primary palette）
+\setbeamercolor{palette primary}{bg=nus-blue, fg=nus-white}
+
+% 底部 bar（secondary/tertiary palettes）
+\setbeamercolor{palette secondary}{bg=nus-blue, fg=nus-white}
+\setbeamercolor{palette tertiary}{bg=nus-blue, fg=nus-white}
+
+% 底部细分隔线（橙色）
+\setbeamercolor{fine separation line}{bg=nus-orange}
+
+
+% ------- 顶栏（若使用默认/mini-frames 导航）-------
+% 顶部条/导航常用到的颜色槽如下（按你的图想要的是蓝底白字）
+\setbeamercolor{section in head/foot}{bg=nus-blue, fg=white}
+\setbeamercolor{subsection in head/foot}{bg=nus-blue, fg=white}
+\setbeamercolor{mini frame}{bg=nus-blue, fg=white} % 小圆点/迷你帧指示
+
+% ------- 你的 footline 模板所需的颜色 -------
+% 橙色细分隔线（在最上那条 thin line）
+\setbeamercolor{upper separation line foot}{bg=nus-orange, fg=nus-orange}
+
+\setbeamercolor{author in head/foot}{bg=nus-blue, fg=white}
+\setbeamercolor{institute in head/foot}{fg=white} % 只需前景色
+\setbeamercolor{title in head/foot}{bg=nus-blue, fg=white}
+\setbeamercolor{frame number}{fg=white}
+
+
+
+
+% Uncomment this section if you want the title background for each slide to be gradient like decaying from nus-orange to nus-white.
+% \useoutertheme{shadow}
+% \usepackage{tikz}
+% \usetikzlibrary{shadings}
+% \colorlet{titleleft}{nus-orange}
+% \colorlet{titleright}{nus-orange!45!nus-white}
+% \makeatletter
+% \pgfdeclarehorizontalshading[titleleft,titleright]{beamer@frametitleshade}{\paperheight}{%
+%   color(0pt)=(titleleft);
+%   color(\paperwidth)=(titleright)}
+% \makeatother
+% End of gradient slide title effect.
+
+% \setbeamercolor{section in head/foot}{bg=nus-blue, fg=nus-white}
+% \setbeamercolor{subsection in head/foot}{bg=nus-blue, fg=nus-white}
+% \setbeamercolor{frametitle}{bg=nus-orange, fg=nus-black}
+% \setbeamercolor{title}{bg=nus-orange, fg=nus-white}
+\setbeamercolor{alerted text}{fg=nus-orange}
+\setbeamercolor{block title}{fg=nus-white, bg=nus-blue}
+\setbeamercolor{block body}{fg=nus-black}
+%
+\setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{propositions}[numbered]
+
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
+% \setbeamertemplate{headline}{%
+%   \begin{beamercolorbox}[wd=\paperwidth,ht=2.2ex,dp=1ex]{section in head/foot}%
+%     \insertsectionnavigationhorizontal{\paperwidth}{}{}%
+%   \end{beamercolorbox}%
+% }
+
 
 \mode
 <all>
